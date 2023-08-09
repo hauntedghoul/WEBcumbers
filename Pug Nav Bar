@@ -1,0 +1,14 @@
+html 
+    head 
+        title Library
+    body 
+        header 
+            nav 
+                a(href="/") Home 
+                a(href="/login") Login 
+                a(href="/register") Register
+                a(href="/profile") Profile
+        section(class="content")
+            block layout-content
+        
+        footer Webcumbers 2023
