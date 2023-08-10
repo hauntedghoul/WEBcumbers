@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Irish+Grover&display=swap');
+
+nav {
+  border: 3px solid #000;
+  background: #E7D7C1;
+  width: 864.9px;
+  height: 160px;
+  position: absolute;
+  left:0;
+  top:0;
+}
+
+.logo{
+  float: left;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 150px;
+  height: 140px;
+  flex-shrink: 0;
+}
+
+.book{
+  width: 200px;
+  height: 300px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  margin-left: 90px;
+}
+
+h1 {
+  float: left;
+  width: 250px;
+  height: 60px;
+  flex-shrink: 0;
+  text-align: center;
+  font-family: Irish Grover;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+h2{
+flex-shrink: 0;
+color: #C28613;
+text-align: center;
+font-family: Irish Grover;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+p {
+flex-shrink: 0;
+color: #000;
+text-align: center;
+font-family: Irish Grover;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+button {
+  appearance: button;
+  background-color: #7DA165;
+  border-radius: 4px;
+  box-shadow: #143109 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  overflow: visible;
+  padding: 12px 40px;
+  margin: 50px 20px;
+  text-align: center;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #000;
+  font-family: Irish Grover;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  float: right;
+}
+
+button:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  float: right;
+}
+
+button:not([disabled]):active {
+  box-shadow: #143109 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+  float: right;
+}
+
+section{
+margin-top: 200px;
+margin-left: 100px;
+width: 400px;
+height: 400px;
+flex-shrink: 0;
+border: 3px solid #000;
+background: #A4C0AD;
+float: left;
+}
+
+aside{
+margin-top: 200px;
+width: 300px;
+height: 400px;
+flex-shrink: 0;
+border: 3px solid #000;
+background: #A4C0AD;
+float: right;
+}
+
+footer{
+  display: flex;
+  width: 864.9px;
+  height: 51px;
+  padding: 14px 0px 13px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 3px solid #000;
+  background: #E7D7C1;
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+
+input{
+width: 239px;
+height: 25px;
+flex-shrink: 0;
+border: 1px solid #000;
+background: #A4C0AD;
+}
+
+@media (min-width: 768px) {
+  button {
+    padding: 12px 50px;
+    float: right;
+  }
+}
