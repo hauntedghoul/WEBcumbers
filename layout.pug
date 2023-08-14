@@ -1,21 +1,28 @@
 doctype html 
 html 
     head 
-        title Library
-        link(src="WEBcumbers/mainCSS.css")
-        link (rel="preconnect" href="https://fonts.googleapis.com")
-        link (rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link (href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Irish+Grover&display=swap" rel="stylesheet")
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Libraryrs
+        link(rel="stylesheet", href="css/mainCSS.css")
+        link(rel='preconnect', type='text', href='https://fonts.googleapis.com')
+        link(rel='preconnect', type='text', href='https://fonts.gstatic.com' crossorigin)
+        link(href='https://fonts.googleapis.com/css2?family=Henny+Penny&family=Irish+Grover&display=swap')
     body 
         header 
             nav 
-                 a(href='/')
-                    img(src='https://static.vecteezy.com/system/resources/previews/025/065/804/original/magical-book-with-glitter-exploding-from-the-pages-generative-ai-free-photo.jpg%22%3E', alt='Library Logo');
+                a(href='/')
+                    img.logo( src='https://static.vecteezy.com/system/resources/previews/025/065/804/original/magical-book-with-glitter-exploding-from-the-pages-generative-ai-free-photo.jpg')
                 h1 The Pending Book Library
-                a(href="/login") Login 
-                a(href="/register") Register
-                a(href="/profile") Profile
+                a(href="/login")
+                    button() Login 
+                a(href="/register")
+                    button() Register
+                a(href="/profile")
+                button() Profile
         section(class="content")
             block layout-content
-    footer 
-        p © 2023, webCumber co.
+            script(src="app.js")
+    footer
+        p 2023, webCumber co.
