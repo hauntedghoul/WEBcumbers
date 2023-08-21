@@ -1,19 +1,20 @@
-console.log("JS Loaded!!!");
+console.log("let him be slutty");
 
 const express = require('express');
+const fs = require('fs');
 const bcrypt = require('bcrypt');
-const { dal } = require('./dal/dal');
-
 const app = express();
 
-let port = 2001;
+let port = 2000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+const { dal } = require('./dal/dal');
 
 app.use(express.static('public'));
+
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded());
 
 app.get("/", (req, res) => {
     res.render("home");
@@ -25,10 +26,6 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
     res.render("register");
-});
-
-app.get("/profile", (req, res) => {
-    res.render("profile");
 });
 
 // Handle the user registration form submission
@@ -46,6 +43,10 @@ app.post('/register', async (req, res) => {
         // Handle error scenario, e.g., redirect to an error page
         res.redirect('/register'); // Redirect back to registration page on error
     }
+});
+
+app.get("/profile", (req, res) => {
+    res.render("profile");
 });
 
 app.listen(port, () => {

@@ -1,0 +1,154 @@
+nav {
+    border: 3px solid #000;
+    background: #E7D7C1;
+    width: 1660px;
+    height: 170px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  
+  .logo{
+    float: left;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .Book{
+    width: 400px;
+    height: 500px;
+    flex-shrink: 0;
+    border: 3px solid #000;
+    background: #A4C0AD;
+    float: left;
+  }
+    
+  section{
+    margin-top: 200px;
+    width: 400px;
+    height: 600px;
+    flex-shrink: 0;
+    border: 3px solid #000;
+    background: #A4C0AD;
+    float: left;
+    margin-left: 600px;
+  }  
+  
+  .Scroll{
+    overflow-y: scroll;
+    height: 600px;
+  }
+  
+  .book{
+    width: 300px;
+    height: 400px;
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-left: 50px;
+  }
+  
+  h1 {
+    float: left;
+    flex-shrink: 0;
+    text-align: center;
+    font-family: Irish Grover;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    margin-left: 10px;
+  }
+  
+  h2{
+  flex-shrink: 0;
+  color: #C28613;
+  text-align: center;
+  font-family: Irish Grover;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+  
+  p {
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: Irish Grover;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  }
+  
+  
+  button, .button {
+    appearance: button;
+    width: 200px;
+    height: 80px;
+    background-color: #7DA165;
+    border-radius: 4px;
+    box-shadow: #143109 6px 6px 0 0,#000 6px 6px 0 1px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    overflow: visible;
+    padding: 12px 40px;
+    margin: 30px 20px;
+    margin-right: 90px;
+    text-align: center;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    color: #000;
+    font-family: Irish Grover;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  button, .button :active {
+    box-shadow: #143109 6px 6px 0 0,#000 6px 6px 0 1px inset;
+    float: right;
+  }
+  
+  button, .button :not([disabled]):active {
+    box-shadow: #143109 6px 6px 0 0,#000 6px 6px 0 1px;
+    transform: translate(2px, 2px);
+    float: right;
+  }
+  
+  footer{
+    display: flex;
+    width: 1660px;
+    height: 51px;
+    padding: 14px 0px 13px 0px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 3px solid #000;
+    background: #E7D7C1;
+    position: absolute;
+    bottom:0;
+    left:0;
+  }
+  
+  input{
+  width: 239px;
+  height: 25px;
+  flex-shrink: 0;
+  border: 1px solid #000;
+  background: #A4C0AD;
+  }
+  
+  @media (min-width: 768px) {
+    button {
+      padding: 12px 50px;
+      float: right;
+    }
+  }
