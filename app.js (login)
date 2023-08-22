@@ -1,0 +1,94 @@
+console.log("let him be slutty");
+
+const express = require('express');
+const mongoose = require('mongoose');
+//const bcrypt = require('bcrypt');
+const session = require('express-session');
+const { Schema } = mongoose;
+const app = express();
+const dal = require('./dal/dal.js'); // Use the correct relative path
+
+
+let port = 2000;
+
+app.set("view engine", 'pug');
+app.set('views', './views');
+
+app.use(express.static('public'));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+
+//const connectionString = "mongodb://localhost:27017/Userio";
+const connection = mongoose.connection;
+
+mongoose.connect("mongodb://localhost:27017/Userio", { 
+    useUnifiedTopology: true, 
+    useNewUrlParser: true
+});
+
+connection.on('connected', () => {
+    console.log('connected to mongoDB');
+    //beginningUsers();
+});
+
+connection.on('error', (err) => {
+    console.error('error connecting to mongodb: ', err);
+});
+
+const userSchema = new Schema({
+    username: String,
+    password: String,
+    email: String
+});
+
+//const User = mongoose.model('User', userSchema);
+
+//app.use(bodyParser.urlencoded({extended: true}));
+
+//MongoClient.connect('');
+
+app.get("/register", (req, res) => {
+    res.render("register");
+});
+
+app.post("/register", async (req, res) => {
+    const { username, password, passwordConfirm, email, emailConfirm } = req.body;
+
+    try {
+        const savedUser = await dal.createUser(username, password, passwordConfirm, email, emailConfirm);
+        console.log("User registered:", savedUser);
+        res.redirect("/login");
+    } catch (error) {
+        console.error("Error registering user:", error);
+        res.status(500).send("Error registering user");
+    }
+});
+
+
+app.get("/login", (req, res) => {
+    let now = new Date().toISOString();
+    console.log("Login:", now);
+
+    res.render("login");
+});
+
+app.post("/login", async (req, res) => {
+    console.log("Post req to /login")
+    console.log(req.body);
+
+    const { username, password } = req.body;
+    console.log("LOGIN Posted:", username, password);
+
+});
+
+app.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/login");
+});
+
+
+app.listen(port, () => {
+    console.log("express listening on port", port);
+});
+
