@@ -1,0 +1,26 @@
+const mongoose = require('mongoose');
+const User = require('./dal/dal').User; // Import the User model from dal.js
+
+mongoose.connect("mongodb://localhost:27017/Userio", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+});
+
+async function runSetup() {
+    try {
+        await mongoose.connection.once('open', async () => {
+            console.log('Connected to MongoDB');
+            await beginningUsers();
+            mongoose.connection.close();
+            console.log('Setup completed');
+        });
+    } catch (error) {
+        console.error('Error during setup:', error);
+    }
+}
+
+async function beginningUsers() {
+    // Your beginningUsers logic here
+}
+
+runSetup();
