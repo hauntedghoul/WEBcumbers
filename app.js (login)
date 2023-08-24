@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const { Schema } = mongoose;
 const app = express();
-const dal = require('./dal/dal.js'); // Use the correct relative path
+const dal = require('./dal/dal.js').dal; // Use the correct relative path
 
 
 let port = 2000;
@@ -74,13 +74,31 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-    console.log("Post req to /login")
+    console.log("Post req to /login");
     console.log(req.body);
 
     const { username, password } = req.body;
     console.log("LOGIN Posted:", username, password);
 
+    try {
+        const user = await dal.getUserByUsername(username);
+
+        if (user) {
+            const passwordMatch = await bcrypt.compare(password, user.password);
+
+            if (passwordMatch) {
+                req.session.user = user;
+                return res.redirect("/profile");
+            }
+        } 
+        console.log("login failed for username: ", username);
+        res.render("login", { error: "invalid username or password"});
+    } catch (error) {
+        console.error("error during login: ", error);
+        res.status(500).send("send during login");
+    }
 });
+
 
 app.get("/logout", (req, res) => {
     req.session.destroy();
