@@ -1,13 +1,13 @@
 extends layout
 
 block layout-content
-
     head 
+        
         title Profile 
     body 
-        h1 Welcome to your Profile 
-        p this Is where you keep all your books 
-        ui 
-            li Book 1
-            li Book 2
-            li Book 3
+        h1 Book List
+        input#pugInput(type="text" placeholder="Enter Book")
+        button#addButton add to list 
+        ul#pugList
+            
+    footer Copyright WEBcumber © 2023
