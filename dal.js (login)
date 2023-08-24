@@ -20,9 +20,18 @@ const UserSchema = new mongoose.Schema(
     { collection: "Users" }
 );
 
-const UserModel = mongoose.model('User', UserSchema);
+const UserModel = mongoose.model('Users', UserSchema);
+
+async function getUserByUsername(username) {
+    try {
+        return await UserModel.findOne({ username });
+    } catch (error) {
+        throw error;
+    }
+}
 
 exports.dal = {
+    getUserByUsername,
     createUser: async function (username, password, passwordConfirm, email, emailConfirm) {
         try {
             const newUser = new UserModel({
